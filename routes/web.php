@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SiteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,4 +20,6 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [SiteController::class, 'index'])->name('home');
+Route::post('/createPost',[SiteController::class,'createPost'])->name('createPost');
+Route::get('/displayPost',[SiteController::class,'displayPost'])->name('displayPost');
